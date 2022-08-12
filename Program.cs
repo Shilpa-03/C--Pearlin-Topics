@@ -1,35 +1,37 @@
-﻿class Adharcard
+﻿public interface Rocket
 {
-    private double adharnum;
-    private string? adharname;
-    public double getadharnum()
-    {
-       
-        return adharnum;
-    }
-    public string getadharname()
-   {
-        
-      return adharname;
-   }
-    public void setno(double no)
-    {
-        this.adharnum = no;
-    }
-    public void setname(string name)
-    {
-        this.adharname = name;
-    }
+    public void flying();
+    
 }
-class GoveProof
+public interface Auto
 {
-    public static void Main (string[] args)
+    public void threeweel();
+}
+public class Flight : Rocket, Auto
+{
+    public void flying()
     {
-        Adharcard ad = new Adharcard();
-        ad.setno(1234509876);
-        Console.WriteLine(ad.getadharnum());
-        ad.setname("Shilpa");
-        Console.WriteLine(ad.getadharname());
+        Console.WriteLine("Fly using wings");
+    }
+    public void threeweel()
+    {
+        Console.WriteLine("Run using three weels");
+    }
 
+}
+ //Explicit Inteface Implementation
+
+class Interface
+{
+    static void Main (string[] args)
+    {
+        Flight f = new Flight();
+
+        Rocket r = f;
+        r.flying();
+
+        Auto a = f;
+        a.threeweel();
+       
     }
 }
