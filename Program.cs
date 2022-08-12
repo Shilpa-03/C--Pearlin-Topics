@@ -1,52 +1,35 @@
-﻿// See https://aka.ms/new-console-template for more information
-class Day1
+﻿class Adharcard
 {
-    public void Register()
+    private double adharnum;
+    private string? adharname;
+    public double getadharnum()
     {
-        Console.WriteLine("Registered");
+       
+        return adharnum;
     }
-    public void Aptitude()
+    public string getadharname()
+   {
+        
+      return adharname;
+   }
+    public void setno(double no)
     {
-        Console.WriteLine("Aptitude round Cleared");
-
+        this.adharnum = no;
     }
-}
-
-class Day2 : Day1
-{
-    public void Technical1()
+    public void setname(string name)
     {
-        Console.WriteLine("technical one cleared");
-    }
-    public void Technical2()
-    {
-        Console.WriteLine("Technical two cleared");
+        this.adharname = name;
     }
 }
-
-class Day3 : Day2
+class GoveProof
 {
-    public void HR()
+    public static void Main (string[] args)
     {
-        Console.WriteLine("cleared HR round");
-    }
-}
-class JoiningDay : Day3
-{
-    public string status = "Selected";
-}
+        Adharcard ad = new Adharcard();
+        ad.setno(1234509876);
+        Console.WriteLine(ad.getadharnum());
+        ad.setname("Shilpa");
+        Console.WriteLine(ad.getadharname());
 
-class Interview
-{
-    static void Main(string[] args)
-    {
-        JoiningDay join = new JoiningDay();
-        Console.WriteLine("Interviw Details");
-        join.Register();
-        join.Aptitude();
-        join.Technical1();
-        join.Technical2();
-        join.HR();
-        Console.WriteLine("Status: "+join.status);
     }
 }
